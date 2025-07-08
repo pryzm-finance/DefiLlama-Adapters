@@ -39,7 +39,7 @@ const endpoint = endPoints["pryzm"]
 function tvlOnChain(chainName, chain) {
   return async (api) => {
     if (chainName === "pryzm") {
-      const data = await get("https://pryzmatics.pryzm.zone/pryzmatics/token/upryzm?detailed_stats=true");
+      const data = await get("https://pryzmatics.pryzm.zone/pryzmatics/token/upryzm?detailed_stats=false");
       const price = Number(data?.token?.price || 0);
       const supply = Number(data?.token?.supply || 0);
       const pryzmBalance = price * (supply / chain.decimals);
